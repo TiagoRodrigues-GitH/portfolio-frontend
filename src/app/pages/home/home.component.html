@@ -1,0 +1,156 @@
+<!-- src/app/pages/home/home.component.html -->
+<div class="home">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="animate-title">
+          Bem-vindo ao meu <span class="highlight">Portfólio</span>
+        </h1>
+        <p class="animate-subtitle">
+          Transformando ideias em experiências digitais incríveis
+        </p>
+        <div class="hero-buttons">
+          <button class="btn-primary" routerLink="/projects">
+            Ver Projetos
+          </button>
+          <button class="btn-secondary" routerLink="/contact">
+            Entrar em Contato
+          </button>
+        </div>
+      </div>
+      <div class="hero-image animate-image">
+        <img src="assets/images/home.png" alt="Developer illustration" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Projetos Completos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">+</div>
+          <div class="stat-label">Estudo continuado</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">+2</div>
+          <div class="stat-label">Anos de dedicação</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Dedicação</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section class="featured-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Projetos em <span class="highlight">Destaque</span></h2>
+        <p>Conheça alguns dos meus melhores trabalhos</p>
+      </div>
+
+      <div *ngIf="featuredProjects.length > 0; else noProjects" class="projects-grid">
+        <article *ngFor="let project of featuredProjects" class="project-card">
+          <div class="card-image">
+            <img [src]="project.image" [alt]="project.alt" />
+          </div>
+          <div class="card-content">
+            <h3>{{ project.title }}</h3>
+            <p>{{ truncateDescription(project.description) }}</p>
+            <div class="card-actions">
+              <button class="btn-details" routerLink="/projects">
+                Ver na página de projetos →
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <ng-template #noProjects>
+        <div class="no-projects">
+          <div class="empty-state">
+            <div class="empty-icon">📦</div>
+            <h3>Nenhum projeto disponível</h3>
+            <p>Em breve novos projetos serão adicionados!</p>
+          </div>
+        </div>
+      </ng-template>
+
+      <div *ngIf="featuredProjects.length > 0" class="view-all">
+        <button class="btn-view-all" routerLink="/projects">
+          Ver Todos os Projetos →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Minhas <span class="highlight">Habilidades</span></h2>
+        <p>Tecnologias que utilizo no dia a dia</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">🚀</div>
+          <h3>Frontend</h3>
+          <div class="skill-tags">
+            <span>Angular</span>
+            <span>TypeScript</span>
+            <span>HTML5/CSS3</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">⚙️</div>
+          <h3>Backend</h3>
+          <div class="skill-tags">
+            <span>Java</span>
+            <span>Spring Boot</span>
+            <span>Python</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🗄️</div>
+          <h3>Database</h3>
+          <div class="skill-tags">
+            <span>MariaDB</span>
+            <span>MySQL</span>
+            <span>MongoDB</span>
+            <span>H2</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🛠️</div>
+          <h3>Ferramentas</h3>
+          <div class="skill-tags">
+            <span>Git</span>
+            <span>Docker</span>
+            <span>Maven</span>
+            <span>IntelliJ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Vamos criar algo incrível juntos?</h2>
+      <p>Estou disponível para novos projetos e desafios!</p>
+      <button class="btn-primary-large" routerLink="/contact">
+        Entre em Contato Agora →
+      </button>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,184 @@
+<div class="admin-page">
+  <h1>Painel Administrativo</h1>
+
+  <div *ngIf="isCheckingAuth" class="loading">
+    Verificando autenticação...
+  </div>
+
+  <div *ngIf="!isCheckingAuth">
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Success Message -->
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-section">
+      <h2>{{ editingId ? 'Editar Projeto' : 'Criar Novo Projeto' }}</h2>
+      <form (ngSubmit)="submitForm()">
+        <div class="form-group">
+          <label for="title">Título *</label>
+          <input
+            id="title"
+            type="text"
+            [(ngModel)]="newProject.title"
+            name="title"
+            required
+            placeholder="Digite o título do projeto"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Descrição *</label>
+          <textarea
+            id="description"
+            [(ngModel)]="newProject.description"
+            name="description"
+            required
+            placeholder="Digite a descrição do projeto"
+            rows="4"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="mediaUrl">URL da Mídia (Imagem/Vídeo)</label>
+          <input
+            id="mediaUrl"
+            type="text"
+            [(ngModel)]="newProject.mediaUrl"
+            name="mediaUrl"
+            placeholder="https://exemplo.com/imagem.jpg"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="mediaType">Tipo de Mídia</label>
+          <select
+            id="mediaType"
+            [(ngModel)]="newProject.mediaType"
+            name="mediaType"
+          >
+            <option value="IMAGE">Imagem</option>
+            <option value="VIDEO">Vídeo</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="thumbnailUrl">URL da Thumbnail</label>
+          <input
+            id="thumbnailUrl"
+            type="text"
+            [(ngModel)]="newProject.thumbnailUrl"
+            name="thumbnailUrl"
+            placeholder="https://exemplo.com/thumbnail.jpg"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="projectUrl">URL do Projeto</label>
+          <input
+            id="projectUrl"
+            type="text"
+            [(ngModel)]="newProject.projectUrl"
+            name="projectUrl"
+            placeholder="https://exemplo.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="displayOrder">Ordem de Exibição</label>
+          <input
+            id="displayOrder"
+            type="number"
+            [(ngModel)]="newProject.displayOrder"
+            name="displayOrder"
+            min="0"
+          />
+        </div>
+
+        <div class="form-group checkbox">
+          <label>
+            <input
+              type="checkbox"
+              [(ngModel)]="newProject.published"
+              name="published"
+            />
+            Publicado
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">
+            {{ editingId ? 'Atualizar' : 'Criar' }} Projeto
+          </button>
+          <button
+            *ngIf="editingId"
+            type="button"
+            class="btn-cancel"
+            (click)="resetForm()"
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Projects List Section -->
+    <div class="projects-section">
+      <h2>Meus Projetos</h2>
+
+      <div *ngIf="isLoading" class="loading">
+        Carregando projetos...
+      </div>
+
+      <div *ngIf="!isLoading && projects.length === 0" class="empty-state">
+        Nenhum projeto criado ainda.
+      </div>
+
+      <table *ngIf="!isLoading && projects.length > 0" class="projects-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Publicado</th>
+            <th>Ordem</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let project of projects">
+            <td>{{ project.id }}</td>
+            <td>{{ project.title }}</td>
+            <td>{{ project.description | slice: 0:50 }}...</td>
+            <td>
+              <span [class.badge-published]="project.published" [class.badge-unpublished]="!project.published">
+                {{ project.published ? 'Sim' : 'Não' }}
+              </span>
+            </td>
+            <td>{{ project.displayOrder }}</td>
+            <td class="actions">
+              <button
+                type="button"
+                class="btn-edit"
+                (click)="editProject(project)"
+              >
+                Editar
+              </button>
+              <button
+                type="button"
+                class="btn-delete"
+                (click)="deleteProject(project.id)"
+              >
+                Deletar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

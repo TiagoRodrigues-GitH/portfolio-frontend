@@ -1,0 +1,158 @@
+ :host {
+	display: block;
+}
+
+.contact-page {
+	min-height: 100vh;
+	padding: 3rem 1.25rem 4rem;
+	background:
+		radial-gradient(circle at top right, rgba(143, 179, 255, 0.18), transparent 28%),
+		radial-gradient(circle at bottom left, rgba(79, 211, 197, 0.12), transparent 24%),
+		linear-gradient(180deg, #08111f 0%, #0d1729 100%);
+	color: #f4f7fb;
+}
+
+.contact-shell {
+	max-width: 1120px;
+	margin: 0 auto;
+}
+
+.contact-header {
+	display: grid;
+	grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.7fr);
+	gap: 1.25rem;
+	align-items: stretch;
+	margin-bottom: 1.5rem;
+}
+
+.profile-card,
+.contact-note,
+.contact-link-card {
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 28px;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
+	backdrop-filter: blur(14px);
+}
+
+.profile-card {
+	display: grid;
+	grid-template-columns: 104px 1fr;
+	gap: 1rem;
+	padding: 1.25rem;
+	align-items: center;
+}
+
+.profile-card img {
+	width: 104px;
+	height: 104px;
+	border-radius: 24px;
+	object-fit: cover;
+	display: block;
+}
+
+.eyebrow,
+.note-label,
+.contact-label {
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.18em;
+	color: #8fb3ff;
+	font-size: 0.76rem;
+}
+
+.profile-card h1 {
+	margin: 0.35rem 0 0.8rem;
+	font-size: clamp(2rem, 4vw, 3.4rem);
+	line-height: 1.05;
+}
+
+.intro,
+.contact-note p,
+.contact-content p {
+	margin: 0;
+	color: rgba(244, 247, 251, 0.82);
+	line-height: 1.65;
+}
+
+.contact-note {
+	padding: 1.25rem;
+	display: grid;
+	align-content: center;
+}
+
+.contact-note p {
+	margin-top: 0.6rem;
+}
+
+.contact-links {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.contact-link-card {
+	display: grid;
+	grid-template-columns: 56px 1fr auto;
+	gap: 1rem;
+	align-items: center;
+	padding: 1.1rem;
+	color: inherit;
+	text-decoration: none;
+	transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.contact-link-card:hover {
+	transform: translateY(-4px);
+	border-color: rgba(143, 179, 255, 0.35);
+	background: rgba(255, 255, 255, 0.09);
+}
+
+.contact-icon {
+	width: 56px;
+	height: 56px;
+	border-radius: 18px;
+	display: grid;
+	place-items: center;
+	background: rgba(143, 179, 255, 0.14);
+	font-size: 1.4rem;
+}
+
+.contact-content strong {
+	display: block;
+	margin: 0.2rem 0 0.35rem;
+	font-size: 1.05rem;
+}
+
+.contact-arrow {
+	color: #8fb3ff;
+	font-size: 1.1rem;
+}
+
+@media (max-width: 960px) {
+	.contact-header,
+	.contact-links {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 640px) {
+	.contact-page {
+		padding: 2rem 1rem 3rem;
+	}
+
+	.profile-card,
+	.contact-link-card {
+		grid-template-columns: 1fr;
+	}
+
+	.profile-card img {
+		width: 88px;
+		height: 88px;
+	}
+
+	.contact-icon {
+		width: 48px;
+		height: 48px;
+	}
+}

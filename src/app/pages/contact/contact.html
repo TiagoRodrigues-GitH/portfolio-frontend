@@ -1,0 +1,41 @@
+<section class="contact-page">
+	<div class="contact-shell">
+		<div class="contact-header">
+			<div class="profile-card">
+				<img [src]="profileImage" alt="Foto de perfil de Tiago Rodrigues" />
+				<div>
+					<p class="eyebrow">Contato</p>
+					<h1>Vamos conversar</h1>
+					<p class="intro">
+						Se você quiser falar sobre projetos, colaborar em uma ideia ou só trocar uma mensagem,
+						estes são os meus canais principais.
+					</p>
+				</div>
+			</div>
+
+			<div class="contact-note">
+				<span class="note-label">Disponível para</span>
+				<p>desenvolvimento sistemas, com foco em backend, aplicações que envolvam machine learning.</p>
+			</div>
+		</div>
+
+		<div class="contact-links">
+			<a
+				*ngFor="let contact of contactLinks"
+				class="contact-link-card"
+				[href]="contact.href"
+				target="_blank"
+				rel="noopener noreferrer"
+				[attr.aria-label]="contact.label + ' - ' + contact.value"
+			>
+				<span class="contact-icon">{{ contact.icon }}</span>
+				<div class="contact-content">
+					<span class="contact-label">{{ contact.label }}</span>
+					<strong>{{ contact.value }}</strong>
+					<p>{{ contact.description }}</p>
+				</div>
+				<span class="contact-arrow">↗</span>
+			</a>
+		</div>
+	</div>
+</section>

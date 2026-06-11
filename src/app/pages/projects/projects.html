@@ -1,0 +1,99 @@
+<section class="projects-page">
+	<header class="page-hero">
+		<div class="hero-copy">
+			<p class="eyebrow">Portfólio</p>
+			<h1>Projetos desenvolvidos</h1>
+			<p class="hero-text">
+				
+			</p>
+		</div>
+
+		<div class="profile-card">
+			<img [src]="profileImage" alt="Foto de perfil" />
+			<div>
+				<h2>Tiago Rodrigues</h2>
+				<p>Desenvolvedor</p>
+			</div>
+		</div>
+	</header>
+
+	<div class="project-showcase" *ngFor="let project of projects; let i = index">
+		<div class="project-copy">
+			<p class="project-index">0{{ project.id }}</p>
+			<h2>{{ project.title }}</h2>
+			<p class="project-summary" *ngIf="project.summary">{{ project.summary }}</p>
+			<p class="project-description">{{ project.details || project.description }}</p>
+
+			<div class="project-meta">
+				<div>
+					<span class="meta-label">Função</span>
+					<p>{{ project.role || 'Projeto pessoal' }}</p>
+				</div>
+				<div>
+					<span class="meta-label">Stack</span>
+					<p>{{ project.stack?.join(' • ') || 'Angular • TypeScript' }}</p>
+				</div>
+			</div>
+
+			<div class="project-tags" *ngIf="project.stack?.length">
+				<span *ngFor="let item of project.stack">{{ item }}</span>
+			</div>
+		</div>
+
+		<div class="project-media">
+			<button
+				type="button"
+				class="image-trigger featured-image"
+				(click)="openImage(i, 0)"
+				[attr.aria-label]="'Abrir imagem de ' + project.title"
+			>
+				<img [src]="project.image" [alt]="project.alt" />
+			</button>
+
+			<div class="gallery-grid" *ngIf="project.gallery?.length">
+				<button
+					type="button"
+					class="image-trigger gallery-item"
+					*ngFor="let image of project.gallery; let imageIndex = index"
+					(click)="openImage(i, imageIndex)"
+					[attr.aria-label]="'Abrir imagem: ' + image.alt"
+				>
+					<img [src]="image.src" [alt]="image.alt" />
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="lightbox" *ngIf="previewImage" (click)="closeImage()">
+		<div class="lightbox-panel" (click)="$event.stopPropagation()">
+			<button type="button" class="lightbox-close" (click)="closeImage()" aria-label="Fechar imagem">
+				×
+			</button>
+			<button
+				type="button"
+				class="lightbox-nav lightbox-prev"
+				*ngIf="hasMultipleImages"
+				(click)="showPreviousImage()"
+				aria-label="Imagem anterior"
+			>
+				‹
+			</button>
+			<button
+				type="button"
+				class="lightbox-nav lightbox-next"
+				*ngIf="hasMultipleImages"
+				(click)="showNextImage()"
+				aria-label="Próxima imagem"
+			>
+				›
+			</button>
+			<img [src]="previewImage.src" [alt]="previewImage.alt" />
+			<p>
+				{{ previewImage.alt }}
+				<span *ngIf="hasMultipleImages" class="lightbox-counter">
+					{{ activeImageIndex + 1 }} / {{ activeProject?.gallery?.length }}
+				</span>
+			</p>
+		</div>
+	</div>
+</section>
