@@ -27,10 +27,17 @@ export interface AboutTranslations {
   portuguese: string;
   english: string;
   germanExperience: string;
+  personalExperienceTitle: string;
+  personalExperience: string;
   certifications: string;
   achievements: string[];
   timeline: Array<{ period: string; title: string; text: string }>;
   resumeLabel: string;
+}
+
+export interface StatTranslation {
+  label: string;
+  description: string;
 }
 
 export interface HomeTranslations {
@@ -43,10 +50,11 @@ export interface HomeTranslations {
   noProjectsTitle: string;
   noProjectsText: string;
   stats: {
-    projects: string;
-    study: string;
-    years: string;
-    dedication: string;
+    automotive: StatTranslation;
+    software: StatTranslation;
+    artificialIntelligence: StatTranslation;
+    embedded: StatTranslation;
+    international: StatTranslation;
   };
   featuredTitle: string;
   featuredSubtitle: string;
@@ -113,7 +121,9 @@ export class I18nService {
       languages: 'Idiomas',
       portuguese: 'Português (nativo)',
       english: 'Inglês (fluente - B2/TOEFL)',
-      germanExperience: 'Vivência e cultura alemã (fluente - B1/B2/DKFA). Residência de cinco anos em Munique, principalmente em Schwabing, entre a Leopoldstrasse e o Englischer Garten. Alemão nível B2, com curso realizado na DFKA em parceria com a LMU. Imersão cultural com acompanhamento das tradições locais, do Bayern de Munique, da Oktoberfest, da mídia alemã e de museus e centros culturais como BMW Welt, Deutsches Verkehrszentrum, MotorWorld Munich e Deutsches Museum.',
+      germanExperience: 'Alemão (B1/B2, curso DFKA em parceria com a LMU).',
+      personalExperienceTitle: 'Experiências pessoais',
+      personalExperience: 'Residência de cinco anos em Munique, principalmente em Schwabing, entre a Leopoldstrasse e o Englischer Garten. Alemão nível B2, com curso realizado na DFKA em parceria com a LMU. Imersão cultural com acompanhamento das tradições locais, do Bayern de Munique, da Oktoberfest, da mídia alemã e de museus e centros culturais como BMW Welt, Deutsches Verkehrszentrum, MotorWorld Munich e Deutsches Museum.',
       certifications: 'Certificações e conquistas',
       achievements: [
         'Aluno especial do Mestrado em Informática da UTFPR: Engenharia de Software, Mineração de Dados, Linguagens de Programação e Inteligência Computacional.',
@@ -141,7 +151,9 @@ export class I18nService {
       languages: 'Languages',
       portuguese: 'Portuguese (native)',
       english: 'English (fluent - B2/TOEFL)',
-      germanExperience: 'German life and culture (fluent - B1/B2/DKFA). I lived in Munich for five years, mainly in Schwabing between Leopoldstrasse and the English Garden. German at B2 level, with a DFKA course in partnership with LMU. Cultural immersion through local traditions, Bayern Munich, Oktoberfest, German media and museums and cultural centers such as BMW Welt, Deutsches Verkehrszentrum, MotorWorld Munich and Deutsches Museum.',
+      germanExperience: 'German (B1/B2, DFKA course in partnership with LMU).',
+      personalExperienceTitle: 'Personal experiences',
+      personalExperience: 'I lived in Munich for five years, mainly in Schwabing, between Leopoldstrasse and the English Garden. I reached B2-level German through a DFKA course held in partnership with LMU. This period also gave me a close experience of local traditions, Bayern Munich, Oktoberfest, German media, and museums and cultural centres such as BMW Welt, Deutsches Verkehrszentrum, MotorWorld Munich and Deutsches Museum.',
       certifications: 'Certifications and achievements',
       achievements: [
         'Special student in UTFPR\'s Master\'s in Computer Science: Software Engineering, Data Mining, Programming Languages and Computational Intelligence.',
@@ -169,7 +181,9 @@ export class I18nService {
       languages: 'Sprachen',
       portuguese: 'Portugiesisch (Muttersprache)',
       english: 'Englisch (fließend - B2/TOEFL)',
-      germanExperience: 'Deutschkenntnisse und Alltagserfahrung in Deutschland (B1/B2, DFKA). Fünf Jahre habe ich in München gelebt, vor allem in Schwabing zwischen Leopoldstraße und Englischem Garten. Mein Deutsch habe ich unter anderem in einem DFKA-Kurs in Zusammenarbeit mit der LMU vertieft. Zum Alltag gehörten lokale Traditionen, der FC Bayern, das Oktoberfest sowie die deutsche Medien- und Museumslandschaft – von der BMW Welt und dem Deutschen Verkehrszentrum bis zum Deutschen Museum.',
+      germanExperience: 'Deutsch (B1/B2, DFKA-Kurs in Zusammenarbeit mit der LMU).',
+      personalExperienceTitle: 'Persönliche Erfahrungen',
+      personalExperience: 'Fünf Jahre habe ich in München gelebt, vor allem in Schwabing zwischen Leopoldstraße und Englischem Garten. Meine Deutschkenntnisse auf B2-Niveau habe ich in einem DFKA-Kurs in Zusammenarbeit mit der LMU vertieft. Diese Zeit hat mir außerdem einen unmittelbaren Einblick in lokale Traditionen, den FC Bayern, das Oktoberfest, die deutsche Medienlandschaft sowie Museen und Kulturzentren wie die BMW Welt, das Deutsche Verkehrszentrum, MotorWorld Munich und das Deutsche Museum gegeben.',
       certifications: 'Ausbildung und Erfolge',
       achievements: [
         'Masterstudium Informatik an der UTFPR als Gasthörer: Softwaretechnik, Data Mining, Programmiersprachen und Computational Intelligence.',
@@ -199,10 +213,26 @@ export class I18nService {
       noProjectsTitle: 'Nenhum projeto disponível',
       noProjectsText: 'Em breve novos projetos serão adicionados!',
       stats: {
-        projects: 'Projetos completos',
-        study: 'Estudo contínuo',
-        years: 'Anos de dedicação',
-        dedication: 'Dedicação',
+        automotive: {
+          label: 'Foco automotivo',
+          description: 'Transição de carreira para a indústria automotiva, com foco em desenvolvimento de software e tecnologias inteligentes.',
+        },
+        software: {
+          label: 'Desenvolvimento de software',
+          description: 'Java • Python • Engenharia de Software • APIs • Banco de Dados',
+        },
+        artificialIntelligence: {
+          label: 'Inteligência artificial',
+          description: 'Machine Learning • Reconhecimento de Padrões • Inteligência Computacional • IA aplicada',
+        },
+        embedded: {
+          label: 'Sistemas embarcados & IoT',
+          description: 'Sistemas embarcados • IoT • Sensores • Desenvolvimento de aplicações',
+        },
+        international: {
+          label: 'Perfil internacional',
+          description: 'Alemão B2 • Inglês B2 • Vivência acadêmica e cultural na Alemanha',
+        },
       },
       featuredTitle: 'Projetos em Destaque',
       featuredSubtitle: 'Conheça alguns dos meus melhores trabalhos.',
@@ -250,10 +280,26 @@ export class I18nService {
       noProjectsTitle: 'No projects available',
       noProjectsText: 'New projects will be added soon!',
       stats: {
-        projects: 'Completed projects',
-        study: 'Continuous learning',
-        years: 'Years of dedication',
-        dedication: 'Dedication',
+        automotive: {
+          label: 'Automotive focus',
+          description: 'Career transition into the automotive industry, focused on software development and intelligent technologies.',
+        },
+        software: {
+          label: 'Software development',
+          description: 'Java • Python • Software Engineering • APIs • Databases',
+        },
+        artificialIntelligence: {
+          label: 'Artificial intelligence',
+          description: 'Machine Learning • Pattern Recognition • Computational Intelligence • Applied AI',
+        },
+        embedded: {
+          label: 'Embedded systems & IoT',
+          description: 'Embedded systems • IoT • Sensors • Application development',
+        },
+        international: {
+          label: 'International profile',
+          description: 'German B2 • English B2 • Academic and cultural experience in Germany',
+        },
       },
       featuredTitle: 'Featured Projects',
       featuredSubtitle: 'Explore some of my best work.',
@@ -301,10 +347,26 @@ export class I18nService {
       noProjectsTitle: 'Keine Projekte verfügbar',
       noProjectsText: 'Bald werden neue Projekte hinzugefügt!',
       stats: {
-        projects: 'Abgeschlossene Projekte',
-        study: 'Laufende Weiterbildung',
-        years: 'Jahre Erfahrung',
-        dedication: 'Leidenschaft',
+        automotive: {
+          label: 'Automobiler Schwerpunkt',
+          description: 'Beruflicher Wechsel in die Automobilindustrie mit Fokus auf Softwareentwicklung und intelligente Technologien.',
+        },
+        software: {
+          label: 'Softwareentwicklung',
+          description: 'Java • Python • Softwaretechnik • APIs • Datenbanken',
+        },
+        artificialIntelligence: {
+          label: 'Künstliche Intelligenz',
+          description: 'Machine Learning • Mustererkennung • Computational Intelligence • Angewandte KI',
+        },
+        embedded: {
+          label: 'Eingebettete Systeme & IoT',
+          description: 'Eingebettete Systeme • IoT • Sensoren • Anwendungsentwicklung',
+        },
+        international: {
+          label: 'Internationales Profil',
+          description: 'Deutsch B2 • Englisch B2 • Akademische und kulturelle Erfahrung in Deutschland',
+        },
       },
       featuredTitle: 'Hervorgehobene Projekte',
       featuredSubtitle: 'Ein Einblick in ausgewählte Arbeiten.',

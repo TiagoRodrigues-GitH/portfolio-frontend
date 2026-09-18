@@ -27,7 +27,7 @@
 
     <article class="about-card achievements-card">
       <h2>{{ t.certifications }}</h2>
-      <ul>
+      <ul class="about-bullet-list">
         <li *ngFor="let achievement of t.achievements">{{ achievement }}</li>
       </ul>
     </article>
@@ -37,23 +37,28 @@
       <ul class="language-list">
         <li>{{ t.portuguese }}</li>
         <li>{{ t.english }}</li>
+        <li>{{ t.germanExperience }}</li>
       </ul>
-      <p class="german-experience">{{ t.germanExperience }}</p>
+    </article>
+
+    <article class="about-card personal-experience-card">
+      <h2>{{ t.personalExperienceTitle }}</h2>
+      <p class="personal-experience about-bullet-text">{{ t.personalExperience }}</p>
     </article>
 
     <article class="about-card technical-card">
       <h2>{{ t.technicalSkills }}</h2>
       <div class="skill-group">
         <h3>Java &amp; Backend</h3>
-        <p>{{ t.java }}</p>
+        <p class="about-bullet-text">{{ t.java }}</p>
       </div>
       <div class="skill-group">
         <h3>Database</h3>
-        <p>{{ t.database }}</p>
+        <p class="about-bullet-text">{{ t.database }}</p>
       </div>
       <div class="skill-group">
         <h3>AI / ML</h3>
-        <p>{{ t.ai }}</p>
+        <p class="about-bullet-text">{{ t.ai }}</p>
       </div>
     </article>
   </div>
