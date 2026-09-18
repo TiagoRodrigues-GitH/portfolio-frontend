@@ -6,9 +6,10 @@
   min-height: 100vh;
   padding: 4.5rem 1.25rem 5rem;
   color: #10233f;
-  background:
-    linear-gradient(135deg, rgba(239, 246, 255, 0.86), rgba(219, 234, 254, 0.8)),
-    url('/assets/images/image.png') center / cover fixed no-repeat;
+  background-color: #dbeafe;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .about-shell {

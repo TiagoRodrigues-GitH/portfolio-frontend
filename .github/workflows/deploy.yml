@@ -33,6 +33,13 @@ jobs:
       - name: Prepare GitHub Pages
         run: cp dist/portfolio-frontend/browser/index.csr.html dist/portfolio-frontend/browser/index.html
 
+      - name: Verify static assets
+        run: |
+          test -f dist/portfolio-frontend/browser/curriculo.pdf
+          test -f dist/portfolio-frontend/browser/assets/images/home.png
+          test -f dist/portfolio-frontend/browser/assets/images/image_projetos.png.jpg
+          test -f dist/portfolio-frontend/browser/assets/images/image_contact.png
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 

@@ -5,10 +5,10 @@
 .projects-page {
 	min-height: 100vh;
 	padding: 3rem 1.25rem 4rem;
-	background:
-		radial-gradient(circle at top left, rgba(96, 165, 250, 0.18), transparent 32%),
-		linear-gradient(rgba(234, 244, 255, 0.84), rgba(223, 238, 255, 0.88)),
-		url('/assets/images/image_projetos.png.jpg') center / cover fixed no-repeat;
+	background-color: #dfeeff;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
 	color: #10233f;
 }
 

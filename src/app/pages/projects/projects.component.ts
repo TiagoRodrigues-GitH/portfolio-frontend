@@ -43,6 +43,10 @@ export class ProjectsComponent implements OnInit {
     };
   }
 
+  get pageBackground(): string {
+    return 'radial-gradient(circle at top left, rgba(96, 165, 250, 0.18), transparent 32%), linear-gradient(rgba(234, 244, 255, 0.84), rgba(223, 238, 255, 0.88)), url("assets/images/image_projetos.png.jpg")';
+  }
+
   get localizedProjects() {
     const translations: Record<Locale, Record<number, Partial<typeof this.projects[number]>>> = {
       pt: {

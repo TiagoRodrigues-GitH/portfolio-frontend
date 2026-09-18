@@ -6,9 +6,9 @@
 
 /* Hero Section */
 .hero-section {
-  background:
-    linear-gradient(135deg, rgba(11, 59, 117, 0.72), rgba(29, 78, 216, 0.72)),
-    url('/assets/images/home.png') center/cover no-repeat;
+  background-color: #0b3b75;
+  background-position: center;
+  background-size: cover;
   padding: 120px 20px 80px;
   color: white;
   position: relative;

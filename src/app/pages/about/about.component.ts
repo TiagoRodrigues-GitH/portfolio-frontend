@@ -27,6 +27,10 @@ export class AboutComponent implements OnInit {
   }
 
   get resumeUrl(): string {
-    return '/curriculo.pdf';
+    return 'curriculo.pdf';
+  }
+
+  get pageBackground(): string {
+    return 'linear-gradient(135deg, rgba(239, 246, 255, 0.86), rgba(219, 234, 254, 0.8)), url("assets/images/image.png")';
   }
 }

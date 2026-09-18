@@ -35,6 +35,10 @@ export class ContactComponent implements OnInit {
     return this.i18n.contact[this.locale];
   }
 
+  get pageBackground(): string {
+    return 'radial-gradient(circle at top right, rgba(96, 165, 250, 0.18), transparent 28%), radial-gradient(circle at bottom left, rgba(147, 197, 253, 0.14), transparent 24%), linear-gradient(rgba(237, 246, 255, 0.84), rgba(223, 238, 255, 0.88)), url("assets/images/image_contact.png")';
+  }
+
   get contactLinks(): ContactLink[] {
     return [
       {

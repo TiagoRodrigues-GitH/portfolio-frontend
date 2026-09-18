@@ -32,6 +32,10 @@ export class HomeComponent implements OnInit {
     return this.i18n.home[this.locale];
   }
 
+  get heroBackground(): string {
+    return 'linear-gradient(135deg, rgba(11, 59, 117, 0.72), rgba(29, 78, 216, 0.72)), url("assets/images/home.png")';
+  }
+
   truncateDescription(description: string): string {
     if (!description) return '';
     const maxLength = 100;
