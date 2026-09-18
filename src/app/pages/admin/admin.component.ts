@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../models/project.model';
 import { AuthService } from '../../services/auth.service';
+import { I18nService, Locale } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-admin',
@@ -27,14 +28,20 @@ export class AdminComponent implements OnInit {
   editingId: number | null = null;
   successMessage = '';
   errorMessage = '';
+  locale: Locale = 'pt';
 
   constructor(
     private projectService: ProjectService,
     private authService: AuthService,
     private router: Router,
+    private route: ActivatedRoute,
+    public i18n: I18nService,
   ) {}
 
   ngOnInit() {
+    this.route.queryParamMap.subscribe((params) => {
+      this.locale = this.i18n.getLocale(params.get('lang'));
+    });
     this.authService.isAuthenticated().subscribe((isAuthenticated) => {
       if (!isAuthenticated) {
         this.router.navigate(['/login'], { queryParams: { returnUrl: '/admin' } });
@@ -44,6 +51,25 @@ export class AdminComponent implements OnInit {
       this.isCheckingAuth = false;
       this.loadProjects();
     });
+  }
+
+  get t() {
+    return {
+      panel: this.locale === 'en' ? 'Admin panel' : this.locale === 'de' ? 'Admin-Bereich' : 'Painel Administrativo',
+      verify: this.locale === 'en' ? 'Verifying authentication...' : this.locale === 'de' ? 'Authentifizierung wird überprüft...' : 'Verificando autenticação...',
+      createNew: this.locale === 'en' ? 'Create new project' : this.locale === 'de' ? 'Neues Projekt erstellen' : 'Criar Novo Projeto',
+      editProject: this.locale === 'en' ? 'Edit project' : this.locale === 'de' ? 'Projekt bearbeiten' : 'Editar Projeto',
+      title: this.locale === 'en' ? 'Title' : this.locale === 'de' ? 'Titel' : 'Título',
+      description: this.locale === 'en' ? 'Description' : this.locale === 'de' ? 'Beschreibung' : 'Descrição',
+      published: this.locale === 'en' ? 'Published' : this.locale === 'de' ? 'Veröffentlicht' : 'Publicado',
+      order: this.locale === 'en' ? 'Display order' : this.locale === 'de' ? 'Anzeigereihenfolge' : 'Ordem de exibição',
+      create: this.locale === 'en' ? 'Create project' : this.locale === 'de' ? 'Projekt erstellen' : 'Criar Projeto',
+      update: this.locale === 'en' ? 'Update project' : this.locale === 'de' ? 'Projekt aktualisieren' : 'Atualizar Projeto',
+      cancel: this.locale === 'en' ? 'Cancel' : this.locale === 'de' ? 'Abbrechen' : 'Cancelar',
+      list: this.locale === 'en' ? 'My projects' : this.locale === 'de' ? 'Meine Projekte' : 'Meus Projetos',
+      loading: this.locale === 'en' ? 'Loading projects...' : this.locale === 'de' ? 'Projekte werden geladen...' : 'Carregando projetos...',
+      empty: this.locale === 'en' ? 'No project created yet.' : this.locale === 'de' ? 'Noch kein Projekt erstellt.' : 'Nenhum projeto criado ainda.',
+    };
   }
 
   loadProjects() {

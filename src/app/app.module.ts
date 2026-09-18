@@ -13,6 +13,8 @@ import { ProjectDetailComponent } from './pages/project-detail/project-detail.co
 import { AdminComponent } from './pages/admin/admin.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { LoginComponent } from './pages/login/login.component';
+import { LanguagePageComponent } from './pages/language-page/language-page.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { LoginComponent } from './pages/login/login.component';
     AdminComponent,
     ContactComponent,
     LoginComponent,
+    LanguagePageComponent,
+    AboutComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, RouterModule],
   providers: [  provideHttpClient(withFetch()) ],

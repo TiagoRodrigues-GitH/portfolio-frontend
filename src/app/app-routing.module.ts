@@ -7,6 +7,8 @@ import { ProjectDetailComponent } from './pages/project-detail/project-detail.co
 import { AdminComponent } from './pages/admin/admin.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { LoginComponent } from './pages/login/login.component';
+import { LanguagePageComponent } from './pages/language-page/language-page.component';
+import { AboutComponent } from './pages/about/about.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
   { path: 'projects/:id', component: ProjectDetailComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'language/:lang', component: LanguagePageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }

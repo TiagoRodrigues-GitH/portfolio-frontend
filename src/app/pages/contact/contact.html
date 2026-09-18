@@ -4,18 +4,15 @@
 			<div class="profile-card">
 				<img [src]="profileImage" alt="Foto de perfil de Tiago Rodrigues" />
 				<div>
-					<p class="eyebrow">Contato</p>
-					<h1>Vamos conversar</h1>
-					<p class="intro">
-						Se você quiser falar sobre projetos, colaborar em uma ideia ou só trocar uma mensagem,
-						estes são os meus canais principais.
-					</p>
+					<p class="eyebrow">{{ t.eyebrow }}</p>
+					<h1>{{ t.title }}</h1>
+					<p class="intro">{{ t.intro }}</p>
 				</div>
 			</div>
 
 			<div class="contact-note">
-				<span class="note-label">Disponível para</span>
-				<p>desenvolvimento sistemas, com foco em backend, aplicações que envolvam machine learning.</p>
+				<span class="note-label">{{ t.availabilityLabel }}</span>
+				<p>{{ t.availabilityText }}</p>
 			</div>
 		</div>
 
@@ -35,6 +32,14 @@
 					<p>{{ contact.description }}</p>
 				</div>
 				<span class="contact-arrow">↗</span>
+			</a>
+		</div>
+
+		<div class="media-preview-card">
+			<p class="media-label">{{ t.mediaLabel }}</p>
+			<a class="media-link" href="https://www.linkedin.com/in/tiagorodriguesde/" target="_blank" rel="noopener noreferrer">
+				<span class="media-badge">📷</span>
+				<span>{{ t.mediaLinkLabel }}</span>
 			</a>
 		</div>
 	</div>

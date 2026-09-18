@@ -1,8 +1,8 @@
 <div class="admin-page">
-  <h1>Painel Administrativo</h1>
+  <h1>{{ t.panel }}</h1>
 
   <div *ngIf="isCheckingAuth" class="loading">
-    Verificando autenticação...
+    {{ t.verify }}
   </div>
 
   <div *ngIf="!isCheckingAuth">
@@ -17,10 +17,10 @@
 
     <!-- Form Section -->
     <div class="form-section">
-      <h2>{{ editingId ? 'Editar Projeto' : 'Criar Novo Projeto' }}</h2>
+      <h2>{{ editingId ? t.editProject : t.createNew }}</h2>
       <form (ngSubmit)="submitForm()">
         <div class="form-group">
-          <label for="title">Título *</label>
+          <label for="title">{{ t.title }} *</label>
           <input
             id="title"
             type="text"
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-          <label for="description">Descrição *</label>
+          <label for="description">{{ t.description }} *</label>
           <textarea
             id="description"
             [(ngModel)]="newProject.description"
@@ -89,7 +89,7 @@
         </div>
 
         <div class="form-group">
-          <label for="displayOrder">Ordem de Exibição</label>
+          <label for="displayOrder">{{ t.order }}</label>
           <input
             id="displayOrder"
             type="number"
@@ -106,13 +106,13 @@
               [(ngModel)]="newProject.published"
               name="published"
             />
-            Publicado
+            {{ t.published }}
           </label>
         </div>
 
         <div class="form-actions">
           <button type="submit" class="btn-submit">
-            {{ editingId ? 'Atualizar' : 'Criar' }} Projeto
+            {{ editingId ? t.update : t.create }}
           </button>
           <button
             *ngIf="editingId"
@@ -120,7 +120,7 @@
             class="btn-cancel"
             (click)="resetForm()"
           >
-            Cancelar
+            {{ t.cancel }}
           </button>
         </div>
       </form>
@@ -128,14 +128,14 @@
 
     <!-- Projects List Section -->
     <div class="projects-section">
-      <h2>Meus Projetos</h2>
+      <h2>{{ t.list }}</h2>
 
       <div *ngIf="isLoading" class="loading">
-        Carregando projetos...
+        {{ t.loading }}
       </div>
 
       <div *ngIf="!isLoading && projects.length === 0" class="empty-state">
-        Nenhum projeto criado ainda.
+        {{ t.empty }}
       </div>
 
       <table *ngIf="!isLoading && projects.length > 0" class="projects-table">

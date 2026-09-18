@@ -6,7 +6,9 @@
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background:
+    linear-gradient(135deg, rgba(11, 59, 117, 0.72), rgba(29, 78, 216, 0.72)),
+    url('/assets/images/home.png') center/cover no-repeat;
   padding: 120px 20px 80px;
   color: white;
   position: relative;
@@ -16,13 +18,9 @@
 .hero-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-  background-size: cover;
-  opacity: 0.3;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(9, 31, 59, 0.18), rgba(30, 64, 175, 0.1));
+  pointer-events: none;
 }
 
 .hero-content {
@@ -43,7 +41,7 @@
 }
 
 .highlight {
-  color: #ffd700;
+  color: #93c5fd;
   position: relative;
   display: inline-block;
 }
@@ -71,7 +69,7 @@
 
 .btn-primary {
   background: white;
-  color: #667eea;
+  color: #1d4ed8;
 }
 
 .btn-primary:hover {
@@ -87,19 +85,20 @@
 
 .btn-secondary:hover {
   background: white;
-  color: #667eea;
+  color: #1d4ed8;
   transform: translateY(-3px);
 }
 
 .hero-image img {
   width: 100%;
   max-width: 400px;
-  animation: float 5s ease-in-out infinite;
+  display: block;
+  filter: drop-shadow(0 18px 35px rgba(15, 23, 42, 0.22));
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+.fixed-photo {
+  animation: none !important;
+  transform: none !important;
 }
 
 /* Stats Section */
@@ -132,13 +131,65 @@
 .stat-number {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #667eea;
+  color: #2563eb;
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
   color: #666;
   font-size: 1rem;
+}
+
+/* Authorial Texts */
+.authorial-section {
+  padding: 80px 20px 20px;
+  background: #f8fbff;
+}
+
+.authorial-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.authorial-card {
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 24px rgba(30, 64, 175, 0.08);
+}
+
+.card-tag {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.authorial-card h3 {
+  color: #0f172a;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.authorial-card p {
+  color: #334155;
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+.authorial-card small {
+  color: #475569;
+  line-height: 1.5;
 }
 
 /* Featured Projects */
@@ -189,7 +240,7 @@
   width: 100%;
   height: 250px;
   overflow: hidden;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
 }
 
 .card-image img {
@@ -210,7 +261,7 @@
   align-items: center;
   justify-content: center;
   font-size: 4rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
   color: white;
 }
 
@@ -244,7 +295,7 @@
 .btn-details {
   background: none;
   border: none;
-  color: #667eea;
+  color: #2563eb;
   cursor: pointer;
   font-weight: 600;
   padding: 0;
@@ -252,7 +303,7 @@
 }
 
 .btn-details:hover {
-  color: #764ba2;
+  color: #1d4ed8;
   transform: translateX(5px);
 }
 
@@ -262,7 +313,7 @@
 }
 
 .btn-view-all {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0b3b75 0%, #1d4ed8 100%);
   color: white;
   border: none;
   padding: 12px 30px;
@@ -275,7 +326,7 @@
 
 .btn-view-all:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 20px rgba(102,126,234,0.4);
+  box-shadow: 0 5px 20px rgba(29, 78, 216, 0.35);
 }
 
 /* Skills Section */
@@ -405,7 +456,7 @@
 /* CTA Section */
 .cta-section {
   padding: 80px 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0b3b75 0%, #1d4ed8 100%);
   color: white;
   text-align: center;
 }
@@ -423,7 +474,7 @@
 
 .btn-primary-large {
   background: white;
-  color: #667eea;
+  color: #1d4ed8;
   border: none;
   padding: 15px 40px;
   font-size: 1.1rem;

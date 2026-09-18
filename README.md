@@ -1,59 +1,107 @@
-# PortfolioFrontend
+# Portfolio Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.14.
+Portfolio pessoal desenvolvido em Angular com foco em apresentação profissional, projetos, contato e conteúdos autorais relacionados à automação, mobilidade e sistemas inteligentes.
 
-## Development server
+## Visão geral
 
-To start a local development server, run:
+Este projeto foi pensado para funcionar como um portfólio digital moderno, com:
+
+- navegação por seções e páginas dedicadas;
+- destaque para projetos e experiências profissionais;
+- página de contato com canais de comunicação;
+- painel administrativo para gestão de conteúdos;
+- estrutura preparada para conteúdos em múltiplos idiomas.
+
+## Arquitetura do projeto
+
+A aplicação segue uma organização simples e modular em Angular:
+
+- src/app/app.component.*: shell principal da aplicação, incluindo top bar, menu e footer;
+- src/app/app-routing.module.ts: definição das rotas principais da aplicação;
+- src/app/pages/: páginas da interface como home, projetos, contato, login e administração;
+- src/app/services/: comunicação com backend e serviços de autenticação;
+- src/app/models/: modelos de dados usados pela aplicação;
+- src/app/shared/: dados compartilhados, como a lista de projetos em destaque;
+- src/assets/: mídias e imagens do site;
+- src/environments/: configurações de ambiente.
+
+### Fluxo de funcionamento
+
+1. O usuário acessa a aplicação pelo navegador.
+2. O módulo principal renderiza o shell compartilhado e a rota ativa.
+3. Cada página é carregada de acordo com a URL atual.
+4. Os dados de projetos podem vir de um backend via service HTTP.
+5. O painel administrativo exige autenticação antes de permitir criação, edição e exclusão.
+
+## Tecnologias principais
+
+- Angular 21
+- TypeScript
+- RxJS
+- HTML/CSS
+- Angular Router
+- HttpClient
+
+## Como executar localmente
 
 ```bash
-ng serve
+npm install
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+A aplicação estará disponível em:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Como adicionar textos autorais
 
-```bash
-ng generate --help
+Os textos podem ser adicionados em seções do site seguindo a estrutura de título, texto e referências. Exemplo:
+
+```text
+Título: Sistema ADAS no Brasil
+Texto: O avanço dos sistemas ADAS no Brasil representa uma etapa importante na modernização da indústria automotiva.
+Referências: normas de segurança veicular, estudos de mercado automotivo e evolução de sensores.
 ```
 
-## Building
+Outros exemplos de conteúdos:
 
-To build the project run:
+```text
+Título: Evolução da Automotiva no Brasil
+Texto: A trajetória da automotiva brasileira mostra como produção local e tecnologia impulsionaram a inovação.
+Referências: relatórios setoriais e tendências de mobilidade.
+```
+
+```text
+Título: História do desenvolvimento dos carros
+Texto: Os veículos evoluíram de machines mecânicas para plataformas digitais com sensores e inteligência artificial.
+Referências: história da indústria automotiva e engenharia de software embarcado.
+```
+
+## Idiomas
+
+A interface inclui suporte para tradução de referência em:
+
+- Português (Brasil)
+- Inglês
+- Alemão
+
+Os flags no topo da página abrem páginas dedicadas com versões de conteúdo em cada idioma.
+
+## Estrutura de deploy e build
+
+Para gerar a build de produção:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Os artefatos ficam na pasta `dist/` e podem ser publicados em qualquer ambiente estático ou servidor compatível com Angular.
 
-## Running unit tests
+## Observações
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- A paleta visual foi adaptada para uma escala azul mais clara e legível.
+- A imagem principal foi ajustada para manter uma aparência fixa, sem movimento.
+- O foco de contato foi alinhado ao setor automotivo, incluindo desenvolvimento de sistemas, front-end, back-end e IA aplicada à mobilidade e ADAS.
+- A estrutura do admin foi mantida para permitir criação e gerenciamento de projetos do portfólio.

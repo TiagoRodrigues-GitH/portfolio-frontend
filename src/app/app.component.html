@@ -1,29 +1,59 @@
 <!-- src/app/app.component.html -->
 <nav class="navbar" role="navigation" aria-label="Menu principal">
   <div class="nav-container">
-    <a routerLink="/" class="logo" aria-label="Página inicial">
-      <span></span> Tiago Rodrigues
+    <a routerLink="/contact" [queryParams]="{ lang: currentLanguage }" class="logo" aria-label="Página de contato">
+      <span class="logo-mark"></span> Tiago Rodrigues
     </a>
-      <div class="social-links">
-        <a href="https://github.com/TiagoRodrigues-GitH" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <span>🐙</span> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/tiagorodriguesde/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <span>🔗</span> LinkedIn
-        </a>
-        <a href="mailto:tiagorodrigues@alunos.utfpr.edu.br" aria-label="Email">
-          <span>📧</span> Email
-        </a>
+
+    <div class="nav-links" [class.active]="menuOpen">
+      <a routerLink="/" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ homeLabel }}</a>
+      <a routerLink="/projects" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ projectsLabel }}</a>
+      <a routerLink="/contact" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ contactLabel }}</a>
+      <a routerLink="/about" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ aboutLabel }}</a>
     </div>
+
+    <div class="social-links">
+      <a href="https://github.com/TiagoRodrigues-GitH" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <span>🐙</span> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/tiagorodriguesde/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <span>🔗</span> LinkedIn
+      </a>
+      <a href="mailto:tiagorodrigues@alunos.utfpr.edu.br" aria-label="Email">
+        <span>📧</span> Email
+      </a>
+    </div>
+
+    <div class="language-switcher" aria-label="Seleção de idioma">
+      <button
+        type="button"
+        class="language-flag"
+        [class.active]="isLanguageActive('pt')"
+        (click)="setLanguage('pt')"
+        title="Português"
+        aria-label="Português"
+      >BR</button>
+      <button
+        type="button"
+        class="language-flag"
+        [class.active]="isLanguageActive('en')"
+        (click)="setLanguage('en')"
+        title="English"
+        aria-label="English"
+      >EN</button>
+      <button
+        type="button"
+        class="language-flag"
+        [class.active]="isLanguageActive('de')"
+        (click)="setLanguage('de')"
+        title="Deutsch"
+        aria-label="Deutsch"
+      >DE</button>
+    </div>
+
     <button class="mobile-menu-btn" (click)="toggleMenu()" aria-label="Menu">
       ☰
     </button>
-    <div class="nav-links" [class.active]="menuOpen">
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-      <a routerLink="/projects" routerLinkActive="active">Projetos</a>
-      <a routerLink="/contact" routerLinkActive="active">Contato</a>
-      <a routerLink="/admins" routerLinkActive="active" class="admin-link"></a>
-    </div>
   </div>
 </nav>
 
@@ -35,26 +65,27 @@
   <div class="container">
     <div class="footer-content">
       <div class="footer-section">
-        <h3>Meu Portfólio</h3>
-        <p>Desenvolvendo soluções incríveis com paixão e dedicação.</p>
+        <h3>{{ footerTitle }}</h3>
+        <p>{{ footerDescription }}</p>
       </div>
       <div class="footer-section">
-        <h3>Links Rápidos</h3>
+        <h3>{{ quickLinksLabel }}</h3>
         <ul>
-          <li><a routerLink="/" routerLinkActive="active">Home</a></li>
-          <li><a routerLink="/projects" routerLinkActive="active">Projetos</a></li>
-          <li><a routerLink="/contact" routerLinkActive="active">Contato</a></li>
-          <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
+          <li><a routerLink="/" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ homeLabel }}</a></li>
+          <li><a routerLink="/projects" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ projectsLabel }}</a></li>
+          <li><a routerLink="/contact" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ contactLabel }}</a></li>
+          <li><a routerLink="/about" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ aboutLabel }}</a></li>
+          <li><a routerLink="/admin" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ adminLabel }}</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h3>Contato</h3>
+        <h3>{{ footerContactLabel }}</h3>
         <p>📧 tiagorodrigues@alunos.utfpr.edu.br</p>
 
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Meu Portfólio. Todos os direitos reservados.</p>
+      <p>&copy; 2026 {{ footerTitle }}. {{ copyrightText }}</p>
     </div>
   </div>
 </footer>
