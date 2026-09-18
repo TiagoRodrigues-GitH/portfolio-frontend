@@ -311,6 +311,10 @@
 		grid-template-columns: 1fr;
 	}
 
+	.projects-page {
+		padding-inline: 1rem;
+	}
+
 	.gallery-grid,
 	.project-meta {
 		grid-template-columns: 1fr;

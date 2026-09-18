@@ -1,15 +1,15 @@
 <!-- src/app/app.component.html -->
 <nav class="navbar" role="navigation" aria-label="Menu principal">
   <div class="nav-container">
-    <a routerLink="/contact" [queryParams]="{ lang: currentLanguage }" class="logo" aria-label="Página de contato">
+    <a routerLink="/about" [queryParams]="{ lang: currentLanguage }" class="logo" aria-label="Sobre mim" (click)="scrollToTop()">
       <span class="logo-mark"></span> Tiago Rodrigues
     </a>
 
     <div class="nav-links" [class.active]="menuOpen">
-      <a routerLink="/" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ homeLabel }}</a>
-      <a routerLink="/projects" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ projectsLabel }}</a>
-      <a routerLink="/contact" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ contactLabel }}</a>
-      <a routerLink="/about" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ aboutLabel }}</a>
+      <a routerLink="/" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">{{ homeLabel }}</a>
+      <a routerLink="/projects" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active" (click)="scrollToTop()">{{ projectsLabel }}</a>
+      <a routerLink="/contact" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active" (click)="scrollToTop()">{{ contactLabel }}</a>
+      <a routerLink="/about" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active" (click)="scrollToTop()">{{ aboutLabel }}</a>
     </div>
 
     <div class="social-links">
@@ -71,11 +71,11 @@
       <div class="footer-section">
         <h3>{{ quickLinksLabel }}</h3>
         <ul>
-          <li><a routerLink="/" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ homeLabel }}</a></li>
-          <li><a routerLink="/projects" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ projectsLabel }}</a></li>
-          <li><a routerLink="/contact" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ contactLabel }}</a></li>
-          <li><a routerLink="/about" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ aboutLabel }}</a></li>
-          <li><a routerLink="/admin" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active">{{ adminLabel }}</a></li>
+          <li><a routerLink="/" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active" (click)="scrollToTop()">{{ homeLabel }}</a></li>
+          <li><a routerLink="/projects" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active" (click)="scrollToTop()">{{ projectsLabel }}</a></li>
+          <li><a routerLink="/contact" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active" (click)="scrollToTop()">{{ contactLabel }}</a></li>
+          <li><a routerLink="/about" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active" (click)="scrollToTop()">{{ aboutLabel }}</a></li>
+          <li><a routerLink="/admin" [queryParams]="{ lang: currentLanguage }" routerLinkActive="active" (click)="scrollToTop()">{{ adminLabel }}</a></li>
         </ul>
       </div>
       <div class="footer-section">

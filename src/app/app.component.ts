@@ -24,6 +24,9 @@ export class AppComponent {
         const urlTree = this.router.parseUrl(event.urlAfterRedirects);
         this.currentLanguage = this.i18n.getLocale(urlTree.queryParams['lang'] ?? null);
         this.menuOpen = false;
+        if (typeof window !== 'undefined') {
+          setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }), 0);
+        }
       }
     });
   }
@@ -36,6 +39,12 @@ export class AppComponent {
     this.currentLanguage = language;
     const currentPath = this.router.url.split('?')[0] || '/';
     this.router.navigateByUrl(`${currentPath}?lang=${language}`);
+  }
+
+  scrollToTop(): void {
+    if (typeof window !== 'undefined') {
+      setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }), 0);
+    }
   }
 
   get homeLabel(): string {

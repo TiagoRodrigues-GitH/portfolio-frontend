@@ -179,6 +179,11 @@
 		padding: 2rem 1rem 3rem;
 	}
 
+	.contact-header,
+	.contact-links {
+		width: 100%;
+	}
+
 	.profile-card,
 	.contact-link-card {
 		grid-template-columns: 1fr;

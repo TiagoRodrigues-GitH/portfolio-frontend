@@ -46,13 +46,17 @@ export class HomeComponent implements OnInit {
 
   openProjects(): void {
     this.router.navigate(['/projects'], { queryParams: { lang: this.locale } }).then(() => {
-      setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }), 0);
+      if (typeof window !== 'undefined') {
+        setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }), 0);
+      }
     });
   }
 
   openContact(): void {
     this.router.navigate(['/contact'], { queryParams: { lang: this.locale } }).then(() => {
-      setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }), 0);
+      if (typeof window !== 'undefined') {
+        setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }), 0);
+      }
     });
   }
 }

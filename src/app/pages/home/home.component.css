@@ -547,7 +547,7 @@
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .section-header h2 {
@@ -564,5 +564,23 @@
 
   .testimonials-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-section,
+  .stats-section,
+  .authorial-section,
+  .featured-section,
+  .skills-section,
+  .cta-section {
+    padding-inline: 1rem;
+  }
+
+  .hero-buttons {
+    flex-wrap: wrap;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    max-width: 100%;
   }
 }
