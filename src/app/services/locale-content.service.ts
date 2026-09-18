@@ -15,7 +15,7 @@ export class LocaleContentService {
   getProjectContent(locale: Locale): Record<string, ProjectLocaleText> {
     const projectText: Record<string, ProjectLocaleText> = {
       pt: {
-        title: 'Sistema de manejo de veiculos',
+        title: 'Sistema de gerenciamento de veículos',
         summary: 'Interface para gerenciamento de veículos, cadastros e operação diária.',
         role: 'Painel administrativo e acompanhamento',
         details: 'Sistema de manejo de veículos desenvolvido para gerenciar cadastros, status e operações do dia a dia, com foco em eficiência e rastreabilidade.',
@@ -40,7 +40,7 @@ export class LocaleContentService {
   getProjectsLocale(locale: Locale): Array<{ label: string; value: string }> {
     return [
       { label: 'portfolio', value: locale === 'en' ? 'Portfolio' : locale === 'de' ? 'Portfolio' : 'Portfólio' },
-      { label: 'developed', value: locale === 'en' ? 'Developed projects' : locale === 'de' ? 'Ausgewählte Projekte' : 'Projetos desenvolvidos' },
+      { label: 'developed', value: locale === 'en' ? 'Selected projects' : locale === 'de' ? 'Ausgewählte Projekte' : 'Projetos selecionados' },
       { label: 'role', value: locale === 'en' ? 'Role' : locale === 'de' ? 'Rolle' : 'Função' },
       { label: 'stack', value: 'Stack' },
       { label: 'openImage', value: locale === 'en' ? 'Open image of' : locale === 'de' ? 'Bild öffnen:' : 'Abrir imagem de' },

@@ -17,7 +17,7 @@ export interface PortfolioProject {
 export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 1,
-    title: 'Sistema de manejo de veiculos',
+    title: 'Sistema de gerenciamento de veículos',
     description: 'Painel e estrutura para controle de veículos, operações e acompanhamento.',
     image: 'assets/images/image_vehicle_management_system_02.png',
     alt: 'Vehicle management system preview',
@@ -57,11 +57,11 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     description: 'Captação de dados de sensores e monitoramento.',
     image: 'assets/images/image_sensor_study_01.png',
     alt: 'Sensor study 01 preview',
-    summary: 'Aplicativo para android que visa captar dados de sensores para ambientes sem conexão com internet.',
-    role: 'Mobile App',
+    summary: 'Aplicativo Android para coleta de dados de sensores em ambientes sem conexão com a internet.',
+    role: 'Aplicativo móvel',
     stack: ['Java', 'Room', 'Android Studio', 'Design de interface'],
     details:
-      'Projeto pensado para acompanhar dados técnicos com uma interface clara, Arquitetura MVVM com foco em modularidade, testes e facilidade de manutenção. Persistencia local usando Room para garantir que os dados sejam armazenados mesmo sem conexão, com sincronização posterior.Compatibilidade com API 24+ e Nexus +7.',
+      'Projeto desenvolvido para acompanhar dados técnicos por meio de uma interface clara e de uma arquitetura MVVM, com foco em modularidade, testes e manutenção. A persistência local com Room mantém os dados disponíveis sem conexão, com sincronização posterior. Compatível com API 24+ e Nexus 7 ou superior.',
     gallery: [
       {
         src: 'assets/images/image_sensor_study_02.png',

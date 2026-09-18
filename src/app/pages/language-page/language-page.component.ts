@@ -27,7 +27,7 @@ export class LanguagePageComponent {
   readonly translations: Record<LanguageKey, TranslationPage> = {
     pt: {
       lang: 'pt',
-      title: 'Tradução em português',
+      title: 'Portfólio em português',
       intro: 'Conteúdo adaptado para apresentar a visão do portfólio em português, com foco em automação, mobilidade e inovação tecnológica.',
       sections: [
         {
@@ -48,7 +48,7 @@ export class LanguagePageComponent {
     },
     en: {
       lang: 'en',
-      title: 'English translation',
+      title: 'Portfolio in English',
       intro: 'Content adapted to present the portfolio in English, focusing on automation, mobility, and technology-driven innovation.',
       sections: [
         {

@@ -32,14 +32,14 @@ export class ProjectsComponent implements OnInit {
   get t() {
     return {
       portfolio: this.locale === 'en' ? 'Portfolio' : this.locale === 'de' ? 'Portfolio' : 'Portfólio',
-      developed: this.locale === 'en' ? 'Developed projects' : this.locale === 'de' ? 'Ausgewählte Projekte' : 'Projetos desenvolvidos',
+      developed: this.locale === 'en' ? 'Selected projects' : this.locale === 'de' ? 'Ausgewählte Projekte' : 'Projetos selecionados',
       role: this.locale === 'en' ? 'Role' : this.locale === 'de' ? 'Rolle' : 'Função',
       stack: 'Stack',
       openImage: this.locale === 'en' ? 'Open image of' : this.locale === 'de' ? 'Bild öffnen:' : 'Abrir imagem de',
       previous: this.locale === 'en' ? 'Previous image' : this.locale === 'de' ? 'Vorheriges Bild' : 'Imagem anterior',
       next: this.locale === 'en' ? 'Next image' : this.locale === 'de' ? 'Nächstes Bild' : 'Próxima imagem',
       close: this.locale === 'en' ? 'Close image' : this.locale === 'de' ? 'Bild schließen' : 'Fechar imagem',
-      profile: this.locale === 'en' ? 'Developer' : this.locale === 'de' ? 'Entwickler' : 'Desenvolvedor',
+      profile: this.locale === 'en' ? 'Software developer' : this.locale === 'de' ? 'Softwareentwickler' : 'Desenvolvedor de software',
     };
   }
 
@@ -56,7 +56,7 @@ export class ProjectsComponent implements OnInit {
           summary: 'Interface para gerenciamento de veículos, cadastros e operação diária.',
           role: 'Painel administrativo e acompanhamento',
           stack: ['Dashboard administrativo', 'Fluxos CRUD', 'Componentização'],
-          details: 'Sistema acadêmico para gerenciamento de veículos, operações diárias e status, aplicando POO, Java Swing e eventos de interface.',
+          details: 'Sistema acadêmico para gerenciamento de veículos, operações diárias e status, desenvolvido com POO, Java Swing e interfaces orientadas a eventos.',
         },
         2: {
           title: 'Sistema bancário',
@@ -81,7 +81,7 @@ export class ProjectsComponent implements OnInit {
           summary: 'Interface for vehicle management, registration and daily operations.',
           role: 'Administrative dashboard and tracking',
           stack: ['Admin dashboard', 'CRUD workflows', 'Component architecture'],
-          details: 'Academic system for vehicle management, daily operations and status tracking, applying OOP, Java Swing and interface events.',
+          details: 'Academic system for vehicle management, daily operations and status tracking, developed with OOP, Java Swing and event-driven interfaces.',
         },
         2: {
           title: 'Banking system',
@@ -106,7 +106,7 @@ export class ProjectsComponent implements OnInit {
           summary: 'Anwendung für Fahrzeugverwaltung, Erfassung und tägliche Abläufe.',
           role: 'Administration und Prozessüberblick',
           stack: ['Admin-Dashboard', 'CRUD-Abläufe', 'Komponentenarchitektur'],
-          details: 'Akademisches System zur Fahrzeugverwaltung und Statusübersicht. Entwickelt mit objektorientierter Programmierung, Java Swing und ereignisgesteuerten Oberflächen.',
+          details: 'Akademisches System zur Fahrzeugverwaltung und Statusübersicht, entwickelt mit objektorientierter Programmierung, Java Swing und ereignisgesteuerten Oberflächen.',
         },
         2: {
           title: 'Bankensystem',
