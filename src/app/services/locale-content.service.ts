@@ -27,7 +27,7 @@ export class LocaleContentService {
         details: 'Vehicle management system designed to handle registrations, status tracking and daily operations with a focus on efficiency and traceability.',
       },
       de: {
-        title: 'Fahrzeugmanagementsystem',
+        title: 'Fahrzeugverwaltung',
         summary: 'Anwendung für Fahrzeugverwaltung, Erfassung und tägliche Abläufe.',
         role: 'Administration und Prozessüberblick',
         details: 'Ein System zur Verwaltung von Fahrzeugen und Statusinformationen. Im Mittelpunkt stehen effiziente Abläufe und eine lückenlose Nachvollziehbarkeit.',

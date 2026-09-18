@@ -101,7 +101,7 @@ export class ProjectsComponent implements OnInit {
       },
       de: {
         1: {
-          title: 'Fahrzeugmanagementsystem',
+          title: 'Fahrzeugverwaltung',
           description: 'Anwendung für Fahrzeugverwaltung, Abläufe und Statusübersicht.',
           summary: 'Anwendung für Fahrzeugverwaltung, Erfassung und tägliche Abläufe.',
           role: 'Administration und Prozessüberblick',
