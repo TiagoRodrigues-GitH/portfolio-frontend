@@ -312,6 +312,16 @@
 	font-size: 0.9rem;
 }
 
+@media (max-width: 1024px) {
+	.page-hero {
+		grid-template-columns: 1fr;
+	}
+
+	.project-showcase {
+		grid-template-columns: 1fr;
+	}
+}
+
 @media (max-width: 900px) {
 	.page-hero,
 	.project-showcase {
