@@ -58,7 +58,11 @@
       </div>
 
       <div class="authorial-grid">
-        <article class="authorial-card" *ngFor="let item of t.authorialCards">
+        <article
+          class="authorial-card"
+          *ngFor="let item of t.authorialCards"
+          [class.authorial-card-wide]="item.text.length > 220 || item.references.length > 170"
+        >
           <span class="card-tag">{{ item.tag }}</span>
           <h3>{{ item.title }}</h3>
           <p>{{ item.text }}</p>

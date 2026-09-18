@@ -104,6 +104,7 @@
 .project-copy h2 {
 	font-size: clamp(1.6rem, 2.4vw, 2.4rem);
 	margin: 0.35rem 0 1rem;
+	overflow-wrap: anywhere;
 }
 
 .project-index {
@@ -137,6 +138,7 @@
 	border-radius: 18px;
 	background: #f4f8ff;
 	border: 1px solid rgba(37, 99, 235, 0.12);
+	min-width: 0;
 }
 
 .meta-label {
@@ -160,6 +162,8 @@
 	background: rgba(96, 165, 250, 0.12);
 	border: 1px solid rgba(37, 99, 235, 0.2);
 	font-size: 0.9rem;
+	max-width: 100%;
+	overflow-wrap: anywhere;
 }
 
 .project-media {
@@ -336,5 +340,74 @@
 
 	.lightbox-next {
 		right: 0.9rem;
+	}
+}
+
+@media (max-width: 560px) {
+	.projects-page {
+		padding: 2rem 0.75rem 3rem;
+		background-attachment: scroll;
+	}
+
+	.page-hero,
+	.project-showcase {
+		margin-bottom: 1rem;
+	}
+
+	.project-showcase {
+		padding: 1rem;
+		border-radius: 20px;
+	}
+
+	.hero-copy h1 {
+		font-size: clamp(1.9rem, 10vw, 2.8rem);
+		line-height: 1.08;
+		overflow-wrap: anywhere;
+	}
+
+	.hero-copy {
+		min-width: 0;
+	}
+
+	.profile-card {
+		grid-template-columns: 68px minmax(0, 1fr);
+		padding: 0.85rem;
+		border-radius: 18px;
+	}
+
+	.profile-card img {
+		border-radius: 16px;
+	}
+
+	.profile-card h2,
+	.profile-card p,
+	.project-copy p {
+		overflow-wrap: anywhere;
+	}
+
+	.project-meta {
+		gap: 0.7rem;
+		margin: 1rem 0;
+	}
+
+	.project-meta > div {
+		padding: 0.85rem;
+	}
+
+	.meta-label {
+		letter-spacing: 0.1em;
+	}
+
+	.gallery-grid {
+		gap: 0.65rem;
+	}
+
+	.lightbox {
+		padding: 0.5rem;
+	}
+
+	.lightbox-panel {
+		padding: 0.75rem;
+		border-radius: 18px;
 	}
 }

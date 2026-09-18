@@ -69,6 +69,32 @@ export class AdminComponent implements OnInit {
       list: this.locale === 'en' ? 'My projects' : this.locale === 'de' ? 'Meine Projekte' : 'Meus Projetos',
       loading: this.locale === 'en' ? 'Loading projects...' : this.locale === 'de' ? 'Projekte werden geladen...' : 'Carregando projetos...',
       empty: this.locale === 'en' ? 'No project created yet.' : this.locale === 'de' ? 'Noch kein Projekt erstellt.' : 'Nenhum projeto criado ainda.',
+      mediaUrl: this.locale === 'en' ? 'Media URL' : this.locale === 'de' ? 'Medien-URL' : 'URL da Mídia',
+      mediaType: this.locale === 'en' ? 'Media type' : this.locale === 'de' ? 'Medientyp' : 'Tipo de Mídia',
+      thumbnailUrl: this.locale === 'en' ? 'Thumbnail URL' : this.locale === 'de' ? 'Thumbnail-URL' : 'URL da Thumbnail',
+      projectUrl: this.locale === 'en' ? 'Project URL' : this.locale === 'de' ? 'Projekt-URL' : 'URL do Projeto',
+      image: this.locale === 'en' ? 'Image' : this.locale === 'de' ? 'Bild' : 'Imagem',
+      video: this.locale === 'en' ? 'Video' : this.locale === 'de' ? 'Video' : 'Vídeo',
+      id: 'ID',
+      actions: this.locale === 'en' ? 'Actions' : this.locale === 'de' ? 'Aktionen' : 'Ações',
+      yes: this.locale === 'en' ? 'Yes' : this.locale === 'de' ? 'Ja' : 'Sim',
+      no: this.locale === 'en' ? 'No' : this.locale === 'de' ? 'Nein' : 'Não',
+      edit: this.locale === 'en' ? 'Edit' : this.locale === 'de' ? 'Bearbeiten' : 'Editar',
+      delete: this.locale === 'en' ? 'Delete' : this.locale === 'de' ? 'Löschen' : 'Deletar',
+      titlePlaceholder: this.locale === 'en' ? 'Enter the project title' : this.locale === 'de' ? 'Projekttitel eingeben' : 'Digite o título do projeto',
+      descriptionPlaceholder: this.locale === 'en' ? 'Enter the project description' : this.locale === 'de' ? 'Projektbeschreibung eingeben' : 'Digite a descrição do projeto',
+      mediaUrlPlaceholder: this.locale === 'en' ? 'https://example.com/image.jpg' : this.locale === 'de' ? 'https://beispiel.de/bild.jpg' : 'https://exemplo.com/imagem.jpg',
+      thumbnailUrlPlaceholder: this.locale === 'en' ? 'https://example.com/thumbnail.jpg' : this.locale === 'de' ? 'https://beispiel.de/thumbnail.jpg' : 'https://exemplo.com/thumbnail.jpg',
+      projectUrlPlaceholder: this.locale === 'en' ? 'https://example.com' : this.locale === 'de' ? 'https://beispiel.de' : 'https://exemplo.com',
+      loadError: this.locale === 'en' ? 'The projects could not be loaded.' : this.locale === 'de' ? 'Die Projekte konnten nicht geladen werden.' : 'Não foi possível carregar os projetos.',
+      required: this.locale === 'en' ? 'Please fill in all required fields.' : this.locale === 'de' ? 'Bitte füllen Sie alle Pflichtfelder aus.' : 'Por favor, preencha os campos obrigatórios',
+      createSuccess: this.locale === 'en' ? 'Project created successfully.' : this.locale === 'de' ? 'Projekt erfolgreich erstellt.' : 'Projeto criado com sucesso!',
+      createError: this.locale === 'en' ? 'Could not create the project. Check the backend and your permissions.' : this.locale === 'de' ? 'Das Projekt konnte nicht erstellt werden. Bitte prüfen Sie Backend und Berechtigungen.' : 'Erro ao criar o projeto. Verifique o backend e suas permissões.',
+      updateSuccess: this.locale === 'en' ? 'Project updated successfully.' : this.locale === 'de' ? 'Projekt erfolgreich aktualisiert.' : 'Projeto atualizado com sucesso!',
+      updateError: this.locale === 'en' ? 'Could not update the project.' : this.locale === 'de' ? 'Das Projekt konnte nicht aktualisiert werden.' : 'Erro ao atualizar o projeto.',
+      deleteSuccess: this.locale === 'en' ? 'Project deleted successfully.' : this.locale === 'de' ? 'Projekt erfolgreich gelöscht.' : 'Projeto deletado com sucesso!',
+      deleteError: this.locale === 'en' ? 'Could not delete the project.' : this.locale === 'de' ? 'Das Projekt konnte nicht gelöscht werden.' : 'Erro ao deletar o projeto.',
+      deleteConfirm: this.locale === 'en' ? 'Are you sure you want to delete this project?' : this.locale === 'de' ? 'Möchten Sie dieses Projekt wirklich löschen?' : 'Tem certeza que deseja deletar este projeto?',
     };
   }
 
@@ -82,7 +108,7 @@ export class AdminComponent implements OnInit {
       },
       error: (error: any) => {
         console.error('Erro ao carregar projetos:', error);
-        this.errorMessage = 'Não foi possível carregar os projetos.';
+        this.errorMessage = this.t.loadError;
         this.isLoading = false;
       }
     });
@@ -90,7 +116,7 @@ export class AdminComponent implements OnInit {
 
   createProject() {
     if (!this.newProject.title || !this.newProject.description) {
-      alert('Por favor, preencha os campos obrigatórios');
+      alert(this.t.required);
       return;
     }
 
@@ -98,19 +124,19 @@ export class AdminComponent implements OnInit {
       next: (data: any) => {
         this.projects.push(data);
         this.resetForm();
-        this.successMessage = 'Projeto criado com sucesso!';
+        this.successMessage = this.t.createSuccess;
         setTimeout(() => this.successMessage = '', 3000);
       },
       error: (error: any) => {
         console.error('Erro:', error);
-        this.errorMessage = 'Erro ao criar o projeto. Verifique o backend e suas permissões.';
+        this.errorMessage = this.t.createError;
       }
     });
   }
 
   updateProject() {
     if (this.editingId === null || !this.newProject.title) {
-      alert('Por favor, preencha os campos obrigatórios');
+      alert(this.t.required);
       return;
     }
 
@@ -121,12 +147,12 @@ export class AdminComponent implements OnInit {
           this.projects[index] = data;
         }
         this.resetForm();
-        this.successMessage = 'Projeto atualizado com sucesso!';
+        this.successMessage = this.t.updateSuccess;
         setTimeout(() => this.successMessage = '', 3000);
       },
       error: (error: any) => {
         console.error('Erro:', error);
-        this.errorMessage = 'Erro ao atualizar o projeto.';
+        this.errorMessage = this.t.updateError;
       }
     });
   }
@@ -134,16 +160,16 @@ export class AdminComponent implements OnInit {
   deleteProject(id: number | undefined) {
     if (!id) return;
 
-    if (confirm('Tem certeza que deseja deletar este projeto?')) {
+    if (confirm(this.t.deleteConfirm)) {
       this.projectService.deleteProject(id).subscribe({
         next: () => {
           this.projects = this.projects.filter((p: Project) => p.id !== id);
-          this.successMessage = 'Projeto deletado com sucesso!';
+          this.successMessage = this.t.deleteSuccess;
           setTimeout(() => this.successMessage = '', 3000);
         },
         error: (error: any) => {
           console.error('Erro:', error);
-          this.errorMessage = 'Erro ao deletar o projeto.';
+          this.errorMessage = this.t.deleteError;
         }
       });
     }

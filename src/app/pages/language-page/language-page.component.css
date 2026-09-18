@@ -67,3 +67,28 @@
 .translation-block p:last-child {
   margin-bottom: 0;
 }
+
+@media (max-width: 640px) {
+  .language-page {
+    padding: 2rem 0.85rem 3rem;
+  }
+
+  .language-card {
+    padding: 1.25rem;
+    border-radius: 20px;
+  }
+
+  .language-card h1 {
+    font-size: clamp(1.9rem, 9vw, 2.7rem);
+    overflow-wrap: anywhere;
+  }
+
+  .translation-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .translation-block {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+}

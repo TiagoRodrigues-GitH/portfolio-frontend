@@ -32,10 +32,10 @@ export class ProjectsComponent implements OnInit {
   get t() {
     return {
       portfolio: this.locale === 'en' ? 'Portfolio' : this.locale === 'de' ? 'Portfolio' : 'Portfólio',
-      developed: this.locale === 'en' ? 'Developed projects' : this.locale === 'de' ? 'Entwickelte Projekte' : 'Projetos desenvolvidos',
+      developed: this.locale === 'en' ? 'Developed projects' : this.locale === 'de' ? 'Ausgewählte Projekte' : 'Projetos desenvolvidos',
       role: this.locale === 'en' ? 'Role' : this.locale === 'de' ? 'Rolle' : 'Função',
       stack: 'Stack',
-      openImage: this.locale === 'en' ? 'Open image of' : this.locale === 'de' ? 'Bild öffnen von' : 'Abrir imagem de',
+      openImage: this.locale === 'en' ? 'Open image of' : this.locale === 'de' ? 'Bild öffnen:' : 'Abrir imagem de',
       previous: this.locale === 'en' ? 'Previous image' : this.locale === 'de' ? 'Vorheriges Bild' : 'Imagem anterior',
       next: this.locale === 'en' ? 'Next image' : this.locale === 'de' ? 'Nächstes Bild' : 'Próxima imagem',
       close: this.locale === 'en' ? 'Close image' : this.locale === 'de' ? 'Bild schließen' : 'Fechar imagem',
@@ -55,6 +55,7 @@ export class ProjectsComponent implements OnInit {
           description: 'Painel e estrutura para controle de veículos, operações e acompanhamento.',
           summary: 'Interface para gerenciamento de veículos, cadastros e operação diária.',
           role: 'Painel administrativo e acompanhamento',
+          stack: ['Dashboard administrativo', 'Fluxos CRUD', 'Componentização'],
           details: 'Sistema acadêmico para gerenciamento de veículos, operações diárias e status, aplicando POO, Java Swing e eventos de interface.',
         },
         2: {
@@ -62,6 +63,7 @@ export class ProjectsComponent implements OnInit {
           description: 'Arquitetura de sistema bancário com foco em escalabilidade e organização de serviços.',
           summary: 'Arquitetura modular para serviços bancários com foco em separação de responsabilidades.',
           role: 'Modelagem e visão arquitetural',
+          stack: ['Arquitetura limpa', 'Integração de serviços', 'Segurança'],
           details: 'Exercício acadêmico para aplicar herança, polimorfismo, encapsulamento e tratamento de exceções.',
         },
         3: {
@@ -78,6 +80,7 @@ export class ProjectsComponent implements OnInit {
           description: 'Dashboard and structure for vehicle control, operations and tracking.',
           summary: 'Interface for vehicle management, registration and daily operations.',
           role: 'Administrative dashboard and tracking',
+          stack: ['Admin dashboard', 'CRUD workflows', 'Component architecture'],
           details: 'Academic system for vehicle management, daily operations and status tracking, applying OOP, Java Swing and interface events.',
         },
         2: {
@@ -85,6 +88,7 @@ export class ProjectsComponent implements OnInit {
           description: 'Banking system architecture focused on scalability and service organization.',
           summary: 'Modular architecture for banking services focused on separation of responsibilities.',
           role: 'Modeling and architectural view',
+          stack: ['Clean architecture', 'Service integration', 'Security'],
           details: 'Academic exercise applying inheritance, polymorphism, encapsulation and exception handling.',
         },
         3: {
@@ -98,24 +102,26 @@ export class ProjectsComponent implements OnInit {
       de: {
         1: {
           title: 'Fahrzeugmanagementsystem',
-          description: 'Dashboard und Struktur zur Fahrzeugsteuerung, für Abläufe und Nachverfolgung.',
-          summary: 'Oberfläche für Fahrzeugmanagement, Registrierung und tägliche Abläufe.',
-          role: 'Administratives Dashboard und Nachverfolgung',
-          details: 'Akademisches System zur Fahrzeugverwaltung und Statusverfolgung mit OOP, Java Swing und Interface-Ereignissen.',
+          description: 'Anwendung für Fahrzeugverwaltung, Abläufe und Statusübersicht.',
+          summary: 'Anwendung für Fahrzeugverwaltung, Erfassung und tägliche Abläufe.',
+          role: 'Administration und Prozessüberblick',
+          stack: ['Admin-Dashboard', 'CRUD-Abläufe', 'Komponentenarchitektur'],
+          details: 'Akademisches System zur Fahrzeugverwaltung und Statusübersicht. Entwickelt mit objektorientierter Programmierung, Java Swing und ereignisgesteuerten Oberflächen.',
         },
         2: {
           title: 'Bankensystem',
-          description: 'Architektur eines Bankensystems mit Fokus auf Skalierbarkeit und Serviceorganisation.',
-          summary: 'Modulare Architektur für Bankdienste mit klarer Verantwortlichkeitstrennung.',
-          role: 'Modellierung und Architekturansicht',
-          details: 'Akademische Übung zu Vererbung, Polymorphismus, Kapselung und Ausnahmebehandlung.',
+          description: 'Architektur eines Bankensystems mit Fokus auf Skalierbarkeit und klare Services.',
+          summary: 'Modulare Architektur für Bankdienste mit klarer Trennung der Verantwortlichkeiten.',
+          role: 'Modellierung und Architektur',
+          stack: ['Saubere Architektur', 'Service-Integration', 'Sicherheit'],
+          details: 'Akademische Arbeit zu Vererbung, Polymorphismus, Kapselung und Ausnahmebehandlung.',
         },
         3: {
           title: 'Anwendung zur Sensorüberwachung',
-          description: 'Erfassung und Überwachung von Sensordaten.',
-          summary: 'Android-Anwendung zur Erfassung von Sensordaten in Umgebungen ohne Internetzugang.',
+          description: 'Erfassung und Auswertung von Sensordaten.',
+          summary: 'Android-Anwendung zur Erfassung von Sensordaten ohne Internetverbindung.',
           role: 'Mobile Anwendung',
-          details: 'MVVM-Anwendung mit lokaler Room-Speicherung für Offline-Daten und spätere Synchronisierung.',
+          details: 'MVVM-Anwendung mit lokaler Room-Datenbank. Die Daten bleiben offline verfügbar und können später synchronisiert werden.',
         },
       },
     };

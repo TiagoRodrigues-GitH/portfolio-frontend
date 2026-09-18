@@ -28,9 +28,9 @@ export class LocaleContentService {
       },
       de: {
         title: 'Fahrzeugmanagementsystem',
-        summary: 'Oberfläche für Fahrzeugmanagement, Registrierung und tägliche Abläufe.',
-        role: 'Administratives Dashboard und Nachverfolgung',
-        details: 'Ein Fahrzeugmanagementsystem für die Verwaltung von Fahrzeugen, Statusverfolgung und täglichen Abläufen mit Fokus auf Effizienz und Nachvollziehbarkeit.',
+        summary: 'Anwendung für Fahrzeugverwaltung, Erfassung und tägliche Abläufe.',
+        role: 'Administration und Prozessüberblick',
+        details: 'Ein System zur Verwaltung von Fahrzeugen und Statusinformationen. Im Mittelpunkt stehen effiziente Abläufe und eine lückenlose Nachvollziehbarkeit.',
       },
     };
 
@@ -40,10 +40,10 @@ export class LocaleContentService {
   getProjectsLocale(locale: Locale): Array<{ label: string; value: string }> {
     return [
       { label: 'portfolio', value: locale === 'en' ? 'Portfolio' : locale === 'de' ? 'Portfolio' : 'Portfólio' },
-      { label: 'developed', value: locale === 'en' ? 'Developed projects' : locale === 'de' ? 'Entwickelte Projekte' : 'Projetos desenvolvidos' },
+      { label: 'developed', value: locale === 'en' ? 'Developed projects' : locale === 'de' ? 'Ausgewählte Projekte' : 'Projetos desenvolvidos' },
       { label: 'role', value: locale === 'en' ? 'Role' : locale === 'de' ? 'Rolle' : 'Função' },
       { label: 'stack', value: 'Stack' },
-      { label: 'openImage', value: locale === 'en' ? 'Open image of' : locale === 'de' ? 'Bild öffnen von' : 'Abrir imagem de' },
+      { label: 'openImage', value: locale === 'en' ? 'Open image of' : locale === 'de' ? 'Bild öffnen:' : 'Abrir imagem de' },
       { label: 'next', value: locale === 'en' ? 'Next' : locale === 'de' ? 'Weiter' : 'Próxima' },
       { label: 'prev', value: locale === 'en' ? 'Previous' : locale === 'de' ? 'Zurück' : 'Anterior' },
     ];

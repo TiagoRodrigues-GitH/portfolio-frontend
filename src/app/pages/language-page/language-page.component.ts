@@ -69,21 +69,21 @@ export class LanguagePageComponent {
     },
     de: {
       lang: 'de',
-      title: 'Deutsche Übersetzung',
-      intro: 'Der Inhalt wurde für die deutsche Präsentation angepasst und fokussiert sich auf Automatisierung, Mobilität und technologische Innovation.',
+      title: 'Portfolio auf Deutsch',
+      intro: 'Ein redaktionell überarbeiteter Einblick in meine Arbeit an Automatisierung, Mobilität und technologischer Innovation.',
       sections: [
         {
-          heading: 'Über das Portfolio',
+          heading: 'Worum es hier geht',
           body: [
-            'Dieses Portfolio vereint Erfahrungen in Systementwicklung, digitaler Architektur und Lösungen für intelligente Mobilität.',
-            'Die Präsentation spiegelt einen technischen Ansatz für den Automobilkontext wider, mit Schwerpunkt auf ADAS-Systemen, Datenintegration und KI.',
+            'Dieses Portfolio bündelt Erfahrungen in der Systementwicklung, digitalen Architektur und bei Lösungen für intelligente Mobilität.',
+            'Im Mittelpunkt steht der Automobilbereich: ADAS-Systeme, Datenintegration und künstliche Intelligenz treffen auf einen klaren Blick für robuste Software.',
           ],
         },
         {
-          heading: 'Tätigkeitsbereiche',
+          heading: 'Schwerpunkte',
           body: [
-            'Entwicklung von Systemen und Oberflächen für Automatisierung, Datenanalyse und vernetzte Mobilität.',
-            'Umsetzung von Front-End-, Back-End- und KI-Modell-Lösungen mit Fokus auf Leistung und Zuverlässigkeit.',
+            'Ich entwickle Systeme und Benutzeroberflächen für Automatisierung, Datenanalyse und vernetzte Mobilität.',
+            'Dazu gehören Front-End- und Back-End-Anwendungen ebenso wie KI-Modelle, bei denen Leistung und Zuverlässigkeit zählen.',
           ],
         },
       ],

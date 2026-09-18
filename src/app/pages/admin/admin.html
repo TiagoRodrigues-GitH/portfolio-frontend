@@ -27,7 +27,7 @@
             [(ngModel)]="newProject.title"
             name="title"
             required
-            placeholder="Digite o título do projeto"
+            [placeholder]="t.titlePlaceholder"
           />
         </div>
 
@@ -38,7 +38,7 @@
             [(ngModel)]="newProject.description"
             name="description"
             required
-            placeholder="Digite a descrição do projeto"
+            [placeholder]="t.descriptionPlaceholder"
             rows="4"
           ></textarea>
         </div>
@@ -50,41 +50,41 @@
             type="text"
             [(ngModel)]="newProject.mediaUrl"
             name="mediaUrl"
-            placeholder="https://exemplo.com/imagem.jpg"
+            [placeholder]="t.mediaUrlPlaceholder"
           />
         </div>
 
         <div class="form-group">
-          <label for="mediaType">Tipo de Mídia</label>
+          <label for="mediaType">{{ t.mediaType }}</label>
           <select
             id="mediaType"
             [(ngModel)]="newProject.mediaType"
             name="mediaType"
           >
-            <option value="IMAGE">Imagem</option>
-            <option value="VIDEO">Vídeo</option>
+            <option value="IMAGE">{{ t.image }}</option>
+            <option value="VIDEO">{{ t.video }}</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="thumbnailUrl">URL da Thumbnail</label>
+          <label for="thumbnailUrl">{{ t.thumbnailUrl }}</label>
           <input
             id="thumbnailUrl"
             type="text"
             [(ngModel)]="newProject.thumbnailUrl"
             name="thumbnailUrl"
-            placeholder="https://exemplo.com/thumbnail.jpg"
+            [placeholder]="t.thumbnailUrlPlaceholder"
           />
         </div>
 
         <div class="form-group">
-          <label for="projectUrl">URL do Projeto</label>
+          <label for="projectUrl">{{ t.projectUrl }}</label>
           <input
             id="projectUrl"
             type="text"
             [(ngModel)]="newProject.projectUrl"
             name="projectUrl"
-            placeholder="https://exemplo.com"
+            [placeholder]="t.projectUrlPlaceholder"
           />
         </div>
 
@@ -141,12 +141,12 @@
       <table *ngIf="!isLoading && projects.length > 0" class="projects-table">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Título</th>
-            <th>Descrição</th>
-            <th>Publicado</th>
-            <th>Ordem</th>
-            <th>Ações</th>
+            <th>{{ t.id }}</th>
+            <th>{{ t.title }}</th>
+            <th>{{ t.description }}</th>
+            <th>{{ t.published }}</th>
+            <th>{{ t.order }}</th>
+            <th>{{ t.actions }}</th>
           </tr>
         </thead>
         <tbody>
@@ -156,7 +156,7 @@
             <td>{{ project.description | slice: 0:50 }}...</td>
             <td>
               <span [class.badge-published]="project.published" [class.badge-unpublished]="!project.published">
-                {{ project.published ? 'Sim' : 'Não' }}
+                {{ project.published ? t.yes : t.no }}
               </span>
             </td>
             <td>{{ project.displayOrder }}</td>
@@ -166,14 +166,14 @@
                 class="btn-edit"
                 (click)="editProject(project)"
               >
-                Editar
+                {{ t.edit }}
               </button>
               <button
                 type="button"
                 class="btn-delete"
                 (click)="deleteProject(project.id)"
               >
-                Deletar
+                {{ t.delete }}
               </button>
             </td>
           </tr>

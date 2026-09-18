@@ -155,6 +155,7 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  min-width: 760px;
 }
 
 .projects-table thead {
@@ -233,6 +234,19 @@
 @media (max-width: 768px) {
   .admin-page {
     padding: 20px 10px;
+  }
+
+  .form-section,
+  .projects-section {
+    padding: 20px 15px;
+  }
+
+  .form-actions {
+    flex-wrap: wrap;
+  }
+
+  .projects-section {
+    overflow-x: auto;
   }
 
   .admin-page h1 {

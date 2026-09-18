@@ -1,8 +1,8 @@
 <div class="login-container">
   <div class="login-card">
     <div class="login-header">
-      <h1>Acesso Administrativo</h1>
-      <p>Entre com suas credenciais</p>
+      <h1>{{ t.title }}</h1>
+      <p>{{ t.intro }}</p>
     </div>
 
     <!-- Error Message -->
@@ -27,14 +27,14 @@
       </div>
 
       <div class="form-group">
-        <label for="password">Senha</label>
+          <label for="password">{{ t.password }}</label>
         <div class="password-input-group">
           <input
             id="password"
             [type]="showPassword ? 'text' : 'password'"
             [(ngModel)]="credentials.password"
             name="password"
-            placeholder="Digite sua senha"
+            [placeholder]="t.passwordPlaceholder"
             [disabled]="isLoading"
             autocomplete="current-password"
           />
@@ -55,13 +55,13 @@
         class="btn-login"
         [disabled]="isLoading"
       >
-        {{ isLoading ? 'Autenticando...' : 'Entrar' }}
+        {{ isLoading ? t.loading : t.submit }}
       </button>
     </form>
 
     <!-- Footer -->
     <div class="login-footer">
-      <p>Não tem acesso? Entre em contato com o administrador.</p>
+      <p>{{ t.footer }}</p>
     </div>
   </div>
 
