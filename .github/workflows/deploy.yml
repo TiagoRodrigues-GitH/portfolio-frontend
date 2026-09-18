@@ -30,6 +30,9 @@ jobs:
       - name: Build Angular
         run: npm run build -- --base-href /portfolio-frontend/
 
+      - name: Prepare GitHub Pages
+        run: cp dist/portfolio-frontend/browser/index.csr.html dist/portfolio-frontend/browser/index.html
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
