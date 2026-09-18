@@ -121,7 +121,12 @@
 .contact-content strong {
 	display: block;
 	margin: 0.2rem 0 0.35rem;
-	font-size: 1.05rem;
+	font-size: 0.75rem;
+	white-space: nowrap;
+}
+
+.contact-content {
+	min-width: 0;
 }
 
 .contact-arrow {
